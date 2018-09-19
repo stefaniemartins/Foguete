@@ -1,4 +1,13 @@
 package poo;
 
-public class BaseDeLancamento {
+import java.util.ArrayList;
+
+public class BaseDeLancamento
+{
+    private ArrayList<Foguete> listaFoguetes;
+
+    public boolean lancar (String nome)
+    {
+
+    }
 }
