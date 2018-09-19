@@ -1,4 +1,6 @@
 package poo;
 
-public class Principal {
+public class Principal
+{
+
 }
