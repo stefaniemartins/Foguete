@@ -1,11 +1,7 @@
 package poo;
 
-import java.util.ArrayList;
-
 public class CentroDeControle
 {
-    Foguete foguete;
-
     private BaseDeLancamento baseDeLancamento;
 
     public void setBaseDeLancamento(BaseDeLancamento baseDeLancamento)
@@ -18,29 +14,27 @@ public class CentroDeControle
         return baseDeLancamento;
     }
 
-    public Foguete buscarFoguete (String nomeFoguete, int opcao)
+    public String buscarFogueteNaBase (String nomeFoguete)
     {
-        ArrayList<Foguete> listaFoguetes;
-        listaFoguetes = baseDeLancamento.getListaFoguetes();
-
-        for (Foguete enderecoFoguete: listaFoguetes)
+        if (baseDeLancamento.buscarFoguete(nomeFoguete).equals("Erro."))
         {
-            if ((nomeFoguete.compareTo(enderecoFoguete.getNome())) == 0)
-            {
-                if (opcao == 1)
-                {
-                    if (foguete.combustivelAtual(1) > 0)
-                        return enderecoFoguete;
-
-                    else
-                        return null;
-                }
-
-                else
-                    return enderecoFoguete;
-            }
+            return "Erro.";
         }
 
-        return null;
+        else
+        {
+            return baseDeLancamento.buscarFoguete(nomeFoguete);
+        }
+
+    }
+
+    public boolean mudarDirecaoNaBase(String nomeFoguete, int direcao)
+    {
+        return (baseDeLancamento.mudarDirecao(nomeFoguete, direcao));
+    }
+
+    public int acionarLancamento (String nomeFoguete)
+    {
+        return baseDeLancamento.lancarFoguete(nomeFoguete);
     }
 }

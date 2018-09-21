@@ -19,26 +19,74 @@ public class BaseDeLancamento
 
     public void setListaFoguetes(ArrayList <Foguete> listaFoguetes)
     {
+
         this.listaFoguetes = listaFoguetes;
     }
 
-    public int getQuantidadeDeFoguetes()
+    public String buscarFoguete (String nomeFoguete)
     {
-        return quantidadeDeFoguetes;
+        for (Foguete enderecoFoguete: listaFoguetes)
+        {
+            if (enderecoFoguete.getNome().equals(nomeFoguete))
+            {
+                return enderecoFoguete.toString();
+            }
+        }
+
+        return "Erro.";
     }
 
-    public void setQuantidadeDeFoguetes(int quantidadeDeFoguetes)
+    public int lancarFoguete (String nomeFoguete)
     {
-        this.quantidadeDeFoguetes = quantidadeDeFoguetes;
+        double consumo, gasto = 0;
+
+        for (Foguete enderecoFoguete: listaFoguetes)
+        {
+            if (enderecoFoguete.getNome().equals(nomeFoguete))
+            {
+                consumo = enderecoFoguete.getConsumo();
+                gasto = (4 * 60 * consumo);
+
+                if (enderecoFoguete.combustivelAtual() >= gasto)
+                {
+                    enderecoFoguete.lancarFoguete();
+                    return 0;
+                }
+
+                return 1;
+            }
+        }
+
+        return 2;
+    }
+
+    public boolean mudarDirecao (String nomeFoguete, int direcao)
+    {
+        for (Foguete enderecoFoguete: listaFoguetes)
+        {
+            if (enderecoFoguete.getNome().equals(nomeFoguete))
+            {
+                return (enderecoFoguete.alterarDirecao(direcao));
+            }
+        }
+
+        return false;
+    }
+
+    public void alterarValores (String nomeFoguete)
+    {
+        for (Foguete enderecoFoguete: listaFoguetes)
+        {
+            if (enderecoFoguete.getNome().equals(nomeFoguete))
+            {
+                enderecoFoguete.propulsores(new int [] {50,50,50,50});
+            }
+        }
     }
 
     @Override
     public String toString()
     {
-        return "Lista de foguetes: \n" + listaFoguetes;
+        return "\nLista de foguetes: \n" + listaFoguetes;
     }
-/*public boolean lancar (String nome)
-    {
-
-    }*/
 }

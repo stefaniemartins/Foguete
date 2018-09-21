@@ -3,10 +3,10 @@ package poo;
 public class Foguete
 {
     private String nome;
-    private double consumo, altitude, tanque, quantidadeCombustivelAtual, litros;
+    private double consumo, altitude, tanque, quantidadeCombustivelAtual, combustivelAtualizado, litros, gasto, velocidade;
     private int propulsor[];
 
-    public Foguete (String nome2, double consumo2, double tanque2, double combustivel)
+    public Foguete (String nome2, double consumo2, double tanque2, double combustivel, double velocidade2)
     {
         propulsor = new int[4];
         propulsor[0] = 0; // Norte.
@@ -19,6 +19,7 @@ public class Foguete
         tanque = tanque2;
         quantidadeCombustivelAtual = combustivel;
         litros = getTanque();
+        velocidade = velocidade2;
     }
 
     public String getNome()
@@ -31,34 +32,33 @@ public class Foguete
         return tanque;
     }
 
-    public void setTanque(double tanque)
+    public double getConsumo()
     {
-        tanque = quantidadeCombustivelAtual;
+        return consumo;
     }
 
-    public double combustivelAtual(int opcao)
+    public double combustivelAtual()
     {
-        if (opcao == 0)
-        {
-            double gasto = 2.5 * consumo;
-            quantidadeCombustivelAtual = litros - (5 * gasto);
-            litros = quantidadeCombustivelAtual;
+        return quantidadeCombustivelAtual;
+    }
 
-            if (litros > 0)
-                return quantidadeCombustivelAtual;
+    public double atualizarCombustivelAtual()
+    {
+            gasto = 2.5 * consumo * 5;
+            litros = combustivelAtual();
+            combustivelAtualizado = litros - gasto;
 
-            else
-                return -1;
-        }
-
-        else
-        {
-            if (litros > 0)
-                return quantidadeCombustivelAtual;
+            if (combustivelAtualizado > 0)
+            {
+                quantidadeCombustivelAtual = combustivelAtualizado;
+                return combustivelAtualizado;
+            }
 
             else
-                return -1;
-        }
+            {
+                combustivelAtualizado = quantidadeCombustivelAtual ;
+                return combustivelAtualizado;
+            }
     }
 
     public void propulsores (int potencia[])
@@ -69,64 +69,69 @@ public class Foguete
         }
     }
 
+    public void lancarFoguete ()
+    {
+        propulsores(new int [] {100,100,100,100});
+        quantidadeCombustivelAtual -= (4 * 60 * consumo);
+        altitude += velocidade * 60;
+    }
+
     public boolean alterarDirecao (int sentido)
     {
 
         if (sentido == 0) // Sentido Norte.
         {
-
-
-            combustivelAtual(0);
-
-            propulsores(new int [] {50,100,50,50});
-
-            return true;
+            if (atualizarCombustivelAtual() > gasto)
+            {
+                propulsores(new int [] {50,100,50,50});
+                altitude += velocidade * 5;
+                return true;
+            }
         }
 
         else if (sentido == 1) // Sentido Sul.
         {
-            combustivelAtual(0);
-
-            propulsores(new int [] {100,50,50,50});
-
-            return true;
+            if (atualizarCombustivelAtual() > gasto)
+            {
+                propulsores(new int [] {100,50,50,50});
+                altitude += velocidade * 5;
+                return true;
+            }
         }
 
         else if (sentido == 2) // Sentido Leste.
         {
-            combustivelAtual(0);
-
-            propulsores(new int [] {50,50,50,100});
-
-            return true;
+            if (atualizarCombustivelAtual() > gasto)
+            {
+                propulsores(new int [] {50,50,50,100});
+                altitude += velocidade * 5;
+                return true;
+            }
         }
 
         else if (sentido == 3) // Sentido Oeste.
         {
-            combustivelAtual(0);
-
-            propulsores(new int [] {50,50,100,50});
-
-            return true;
+            if (atualizarCombustivelAtual() > gasto)
+            {
+                propulsores(new int [] {50,50,100,50});
+                altitude += velocidade * 5;
+                return true;
+            }
         }
+
         return false;
     }
 
+    public double getAltitude()
+    {
+        return altitude;
+    }
     @Override
     public String toString()
     {
-        if (combustivelAtual(1) == -1)
-        {
-            return "Tanque com combustível insuficiente.";
-        }
-
-        else
-        {
             return "\nNome: " + nome + "\nConsumo: " + consumo + "\nTamanho do tanque: " + tanque +
                     "\nQuantidade de combustível atual: " + quantidadeCombustivelAtual + "\nAltitude: " + altitude +
                     "\nPropulsor[0]: " + propulsor[0] + "\nPropulsor[1]: " + propulsor[1] + "\nPropulsor[2]: " + propulsor[2]
                     + "\nPropulsor[3]: " + propulsor[3];
-        }
-
     }
 }
