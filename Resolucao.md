@@ -1,3 +1,3 @@
 # SISTEMA DE CONTROLE DE FOGUETES EM UML #
 
-![UML](UML.png)
+![UML](SistemaDeControleDeFoguetes.png)
