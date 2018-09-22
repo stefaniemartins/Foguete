@@ -129,9 +129,9 @@ public class Foguete
     @Override
     public String toString()
     {
-            return "\nNome: " + nome + "\nConsumo: " + consumo + "\nTamanho do tanque: " + tanque +
-                    "\nQuantidade de combustível atual: " + quantidadeCombustivelAtual + "\nAltitude: " + altitude +
-                    "\nPropulsor[0]: " + propulsor[0] + "\nPropulsor[1]: " + propulsor[1] + "\nPropulsor[2]: " + propulsor[2]
-                    + "\nPropulsor[3]: " + propulsor[3];
+            return "\n|Nome: " + nome + "\n|Consumo: " + consumo + "\n|Tamanho do tanque: " + tanque +
+                    "\n|Quantidade de combustível atual: " + quantidadeCombustivelAtual + "\n|Altitude: " + altitude +
+                    "\n|Propulsor[0]: " + propulsor[0] + "\n|Propulsor[1]: " + propulsor[1] + "\n|Propulsor[2]: " + propulsor[2]
+                    + "\n|Propulsor[3]: " + propulsor[3];
     }
 }

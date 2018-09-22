@@ -5,17 +5,6 @@ import java.util.ArrayList;
 public class BaseDeLancamento
 {
     private ArrayList<Foguete> listaFoguetes;
-    private int quantidadeDeFoguetes;
-
-    public BaseDeLancamento (int quantidadeDeFoguetes2)
-    {
-        quantidadeDeFoguetes = quantidadeDeFoguetes2;
-    }
-
-    public ArrayList <Foguete> getListaFoguetes()
-    {
-        return listaFoguetes;
-    }
 
     public void setListaFoguetes(ArrayList <Foguete> listaFoguetes)
     {
@@ -40,7 +29,7 @@ public class BaseDeLancamento
     {
         double consumo, gasto = 0;
 
-        for (Foguete enderecoFoguete: listaFoguetes)
+        for (Foguete enderecoFoguete : listaFoguetes)
         {
             if (enderecoFoguete.getNome().equals(nomeFoguete))
             {
@@ -50,7 +39,7 @@ public class BaseDeLancamento
                 if (enderecoFoguete.combustivelAtual() >= gasto)
                 {
                     enderecoFoguete.lancarFoguete();
-                    return 0;
+                     return 0;
                 }
 
                 return 1;

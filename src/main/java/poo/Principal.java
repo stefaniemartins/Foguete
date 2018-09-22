@@ -8,7 +8,6 @@ public class Principal
     public static void main(String[] args)
     {
         CentroDeControle centroDeControle  = new CentroDeControle();
-
         ArrayList<Foguete> listaNomes;
         double consumo, tanque, combustivel, velocidade2;
         int direcao, opcao = -1, quantidade;
@@ -18,12 +17,18 @@ public class Principal
 
         while (opcao != 4)
         {
-            System.out.println("\nDigite a opção desejada: ");
-            System.out.println("(0) Criação da base de lançamento.");
-            System.out.println("(1) Fazer o lançamento do foguete.");
-            System.out.println("(2) Mudança de direção do foguete.");
-            System.out.println("(3) Mostrar telemetria do foguete.");
-            System.out.println("(4) Sair.");
+            System.out.println(" ____________________________________");
+            System.out.println("|                                    |");
+            System.out.println("|      Digite a opção desejada:      |");
+            System.out.println("|                                    |");
+            System.out.println("| (0) Criação da base de lançamento. |");
+            System.out.println("| (1) Fazer o lançamento do foguete. |");
+            System.out.println("| (2) Mudança de direção do foguete. |");
+            System.out.println("| (3) Mostrar telemetria do foguete. |");
+            System.out.println("| (4) Sair.                          |");
+            System.out.println("|____________________________________|");
+            System.out.println("\n Opção: ");
+
             opcao = teclado.nextInt();
 
             if (opcao == 0)
@@ -33,7 +38,7 @@ public class Principal
                 System.out.println("\nDigite a quantidade de foguetes desejada: ");
                 quantidade = teclado.nextInt();
 
-                baseDeLancamento = new BaseDeLancamento(quantidade);
+                baseDeLancamento = new BaseDeLancamento();
                 listaNomes = new ArrayList <>();
 
                 for (int i = 0; i < quantidade; i++)
@@ -81,7 +86,7 @@ public class Principal
 
                 else if (retornoLancar == 2)
                 {
-                    System.out.println("\nFoguete não encontrado!");
+                    System.out.println("\nFoguete não encontrado na base!");
                 }
             }
 
@@ -97,11 +102,15 @@ public class Principal
 
                 else
                 {
-                    System.out.println("\nDigite a opção desejada: ");
-                    System.out.println("(0) Direção norte.");
-                    System.out.println("(1) Direção sul.");
-                    System.out.println("(2) Direção leste.");
-                    System.out.println("(3) Direção oeste.");
+                    System.out.println(" ___________________________");
+                    System.out.println("|                          |");
+                    System.out.println("| Digite a opção desejada: |");
+                    System.out.println("|                          |");
+                    System.out.println("|    (0) Direção norte.    |");
+                    System.out.println("|    (1) Direção sul.      |");
+                    System.out.println("|    (2) Direção leste.    |");
+                    System.out.println("|    (3) Direção oeste.    |");
+                    System.out.println("|__________________________|");
                     direcao = teclado.nextInt();
 
                     if (centroDeControle.mudarDirecaoNaBase(nomeFoguete, direcao))
