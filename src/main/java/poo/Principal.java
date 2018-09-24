@@ -43,20 +43,122 @@ public class Principal
 
                 for (int i = 0; i < quantidade; i++)
                 {
+                    System.out.println(" __________________________________");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|       _________________________  |");
+                    System.out.println("|     _|                         | |");
+                    System.out.println("|   _|_|    BASE DE LANÇAMENTO   | |");
+                    System.out.println("| _|_|_|_________________________| |");
+                    System.out.println("|__________________________________|");
                     System.out.println("\nDigite o nome do foguete: " + (i + 1) + ":");
                     nomeFoguete = teclado.next();
+                    System.out.println("\nCriando foguete " + nomeFoguete + " ...");
+                    System.out.println(" __________________________________");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|       _________________________  |");
+                    System.out.println("|     _|                         | |");
+                    System.out.println("|   _|_|    BASE DE LANÇAMENTO   | |");
+                    System.out.println("| _|_|_|_________________________| |");
+                    System.out.println("|__________________________________|");
                     System.out.println("Digite o consumo do foguete: " + (i + 1) + ":");
                     consumo = teclado.nextDouble();
+                    System.out.println("\nCriando foguete " + nomeFoguete + " ...");
+                    System.out.println(" __________________________________");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|              _         _         |");
+                    System.out.println("|            _| |       | |_       |");
+                    System.out.println("|           | | |       | | |      |");
+                    System.out.println("|       ____|_|_|_______|_|_|____  |");
+                    System.out.println("|     _|                         | |");
+                    System.out.println("|   _|_|    BASE DE LANÇAMENTO   | |");
+                    System.out.println("| _|_|_|_________________________| |");
+                    System.out.println("|__________________________________|");
                     System.out.println("Digite a velocidade do foguete: " + (i + 1) + ":");
                     velocidade2 = teclado.nextDouble();
+                    System.out.println("\nCriando foguete " + nomeFoguete + " ...");
+                    System.out.println(" __________________________________");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|                                  |");
+                    System.out.println("|               |       |          |");
+                    System.out.println("|               |       |          |");
+                    System.out.println("|              _|       |_         |");
+                    System.out.println("|            _| |       | |_       |");
+                    System.out.println("|           | | |       | | |      |");
+                    System.out.println("|       ____|_|_|_______|_|_|____  |");
+                    System.out.println("|     _|                         | |");
+                    System.out.println("|   _|_|    BASE DE LANÇAMENTO   | |");
+                    System.out.println("| _|_|_|_________________________| |");
+                    System.out.println("|__________________________________|");
                     System.out.println("Digite o tamanho do tanque do foguete: " + (i + 1) +":");
                     tanque = teclado.nextDouble();
+                    System.out.println("\nCriando foguete " + nomeFoguete + " ...");
+                    System.out.println(" __________________________________");
+                    System.out.println("|                   _              |");
+                    System.out.println("|                  |||             |");
+                    System.out.println("|                 |||||            |");
+                    System.out.println("|                |||||||           |");
+                    System.out.println("|               |||||||||          |");
+                    System.out.println("|               |       |          |");
+                    System.out.println("|               |       |          |");
+                    System.out.println("|              _|       |_         |");
+                    System.out.println("|            _| |       | |_       |");
+                    System.out.println("|           | | |       | | |      |");
+                    System.out.println("|       ____|_|_|_______|_|_|____  |");
+                    System.out.println("|     _|                         | |");
+                    System.out.println("|   _|_|    BASE DE LANÇAMENTO   | |");
+                    System.out.println("| _|_|_|_________________________| |");
+                    System.out.println("|__________________________________|");
 
                     do
                     {
                         System.out.println("Digite a quantidade de combustível do foguete " + (i + 1) + " que seja menor ou igual a " + tanque + ": ");
                         combustivel = teclado.nextDouble();
                     } while (tanque < combustivel);
+
+                    System.out.println("\nFoguete " + nomeFoguete + " criado com sucesso!");
+                    System.out.println(" __________________________________");
+                    System.out.println("|                   _              |");
+                    System.out.println("|                  |||             |");
+                    System.out.println("|                 |||||            |");
+                    System.out.println("|                |||||||           |");
+                    System.out.println("|               |||||||||          |");
+                    System.out.println("|               |   _   |          |");
+                    System.out.println("|               |  (_)  |          |");
+                    System.out.println("|              _|   _   |_         |");
+                    System.out.println("|            _| |  (_)  | |_       |");
+                    System.out.println("|           | | |       | | |      |");
+                    System.out.println("|       ____|_|_|_______|_|_|____  |");
+                    System.out.println("|     _|                         | |");
+                    System.out.println("|   _|_|    BASE DE LANÇAMENTO   | |");
+                    System.out.println("| _|_|_|_________________________| |");
+                    System.out.println("|__________________________________|");
 
                     foguete = new Foguete(nomeFoguete, consumo, tanque, combustivel, velocidade2);
                     listaNomes.add(foguete);
@@ -74,7 +176,24 @@ public class Principal
 
                 if (retornoLancar == 0)
                 {
-                    System.out.println("\nFoguete lançado com sucesso!");
+                    System.out.println("\nFoguete " + nomeFoguete + " lançado com sucesso!");
+                    System.out.println(" __________________________________");
+                    System.out.println("|            ★      _      ★       |");
+                    System.out.println("|    ★             |||        ★    |");
+                    System.out.println("|            ★    |||||    ★       |");
+                    System.out.println("|         ★      |||||||          ★|");
+                    System.out.println("| ★             |||||||||     ★    |");
+                    System.out.println("|       ★       |   _   |          |");
+                    System.out.println("|   ★           |  (_)  |     ★    |");
+                    System.out.println("|           ★  _|   _   |_         |");
+                    System.out.println("|     ★      _| |  (_)  | |_   ★   |");
+                    System.out.println("|         ★ | | |       | | |      |");
+                    System.out.println("|  ★        |_|_|_______|_|_|    ★ |");
+                    System.out.println("|        ★  |||||       |||||      |");
+                    System.out.println("|     ★      |||    ★    |||    ★  |");
+                    System.out.println("|  ★      ★   |      ★    |   ★    |");
+                    System.out.println("|__________________________________|");
+
                     System.out.println("\n" + centroDeControle.buscarFogueteNaBase(nomeFoguete));
                     centroDeControle.getBaseDeLancamento().alterarValores(nomeFoguete);
                 }
